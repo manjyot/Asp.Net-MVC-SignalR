@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="TestModel-Web.config Connection String" description="TestModel Connection String used in web.config by the application to access the database." defaultValue="data source=(localdb)\MSSQLLocalDB;initial catalog=ClickTicker;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\manjy\\Documents\\Visual\ Studio\ 2015\\Projects\\ClickTickerSample\\ClickTickerSample\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TestModel']/@connectionString" />
+  </parameter>
+</parameters>

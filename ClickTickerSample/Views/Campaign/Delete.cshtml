@@ -1,0 +1,80 @@
+﻿@model ClickTickerSample.DevTest
+
+@{
+    ViewBag.Title = "Delete Campaign";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>DevTest</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CampaignName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CampaignName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Clicks)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Clicks)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Conversions)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Conversions)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Impressions)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Impressions)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AffiliateName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AffiliateName)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

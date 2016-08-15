@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "List Campaigns";
+}
+
+
+@section Scripts{
+    <script src="~/Scripts/jquery.signalR-2.2.1.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript">
+    $( document ).ready(function() {
+
+        var notifications = $.connection.CampaignHub;
+        $.connection.hub.start().done(function () {
+            getAllCampaigns();
+        }).fail(function (e) {
+            alert(e);
+        });
+
+        notifications.client.updateCampaign = function () {
+            getAllCampaigns()
+
+        };
+    });
+
+
+    function getAllCampaigns()
+    {
+        var tbl = $('#campaignTable');
+        $.ajax({
+            url: '@Url.Action("GetCampaign", "Campaign")',
+            contentType: 'application/html ; charset:utf-8',
+            type: 'GET',
+            dataType: 'html'
+        }).success(function (result) {
+            tbl.empty().append(result);
+        }).error(function () {
+
+        });
+    }
+    </script>
+
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="campaignTable"></div>
+    </div>
+</div>

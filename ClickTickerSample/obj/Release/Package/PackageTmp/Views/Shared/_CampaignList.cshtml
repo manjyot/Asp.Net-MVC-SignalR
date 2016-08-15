@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ClickTickerSample.DevTest>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<style>
+    tr td {
+        text-align: center;
+    }
+
+    tr th {
+        text-align: center;
+    }
+</style>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CampaignName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clicks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Conversions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Impressions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AffiliateName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CampaignName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clicks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Conversions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Impressions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AffiliateName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,74 @@
+﻿@model ClickTickerSample.DevTest
+
+@{
+    ViewBag.Title = "Campaign Details";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>DevTest</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CampaignName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CampaignName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Clicks)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Clicks)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Conversions)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Conversions)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Impressions)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Impressions)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AffiliateName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AffiliateName)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
